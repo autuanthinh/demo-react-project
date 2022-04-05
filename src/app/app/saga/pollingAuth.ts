@@ -3,11 +3,12 @@ import { put, call, select, delay } from 'redux-saga/effects';
 // import Config from 'app/config';
 import Utils from 'app/utils';
 import SagaPoll from 'app/utils/SagaPoll';
+import { cookie } from 'app/utils';
+
+import * as authService from 'app/services/auth';
 
 import * as appSelector from '../selectors';
 import * as appActions from '../actions';
-
-import * as routerAction from 'app/containers/router/actions';
 
 class PollToken extends SagaPoll {
   *pollSync(): any {
@@ -21,7 +22,7 @@ class PollToken extends SagaPoll {
         if (authToken) {
           yield call(refreshToken, authToken);
         } else {
-          yield put(routerAction.push('/login'));
+          yield put(appActions.logout());
         }
       }
     } catch (error) {
@@ -34,13 +35,18 @@ class PollToken extends SagaPoll {
 
 export function* refreshToken(token: any): any {
   try {
-    // const response: any = yield axios.post(Config.VALIDATE_URL, { Token: token });
-    // localStorage.setItem('token', response.data.Token);
-    // yield put(appActions.setToken(response.data.Token));
+    const result: any = yield authService.refreshToken(token);
+    localStorage.setItem('token', result.token);
+
+    // And save new token to cookie with expire time 10m
+    const expiredTime = Date.now() + 10 * 60 * 1000;
+    cookie.setItem(cookie.keys.TOKEN, result.token, { expires: expiredTime }, false);
+
+    yield put(appActions.setToken(result.token));
   } catch (error) {
     Utils.handleError(error);
-    localStorage.removeItem('token');
-    yield put(routerAction.push('/login'));
+    cookie.removeItem('token');
+    yield put(appActions.logout());
   }
 }
 

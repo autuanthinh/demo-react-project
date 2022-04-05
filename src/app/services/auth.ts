@@ -10,7 +10,7 @@ export function login(payload: { username: string; password: string }) {
   return API.post(url, payload, null, false).then(result => result.data);
 }
 
-// export function refreshToken() {
-//   let url = '/v2/users/authentication';
-//   return API.get(url).then(result => result.data);
-// }
+export function refreshToken(token: string) {
+  let url = '/auth/refresh-token';
+  return API.post(url, { token }, null, false).then(result => result.data);
+}

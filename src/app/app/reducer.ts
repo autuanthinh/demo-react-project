@@ -1,6 +1,7 @@
 import { fromJS } from 'immutable';
 import * as nameActList from './constants';
 import { ImmutableState } from 'app/types';
+import { cookie } from 'app/utils';
 
 const getInitData = () => {
   return fromJS({
@@ -22,6 +23,8 @@ const reducer = (state: ImmutableState = getInitData(), action: any): ImmutableS
     case nameActList.SET_TOKEN:
       return state.set('token', action.payload).set('isCheckedLogin', true);
     case nameActList.LOG_IN:
+      const expiredTime = Date.now() + 10 * 60 * 1000;
+      cookie.setItem(cookie.keys.TOKEN, action.payload, { expires: expiredTime }, false);
       return state.set('token', action.payload).set('isCheckedLogin', true);
 
     case nameActList.LOG_OUT:

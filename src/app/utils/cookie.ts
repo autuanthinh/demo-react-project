@@ -13,7 +13,7 @@ class Cookie {
     TOKEN: 'token',
   };
 
-  setItem(key: string, value: any, option: object, onlyDomain: boolean = true): void {
+  setItem(key: string, value: any, option?: object, onlyDomain: boolean = true): void {
     Cookies.set(key, value, this.calcOption(option, onlyDomain));
   }
 
@@ -34,7 +34,7 @@ class Cookie {
     Cookies.set(key, JSON.stringify(value), this.calcOption(option, onlyDomain));
   }
 
-  removeItem(key: string, option: any, onlyDomain = true): void {
+  removeItem(key: string, option?: any, onlyDomain: boolean = true): void {
     Cookies.remove(key, this.calcOption(option, onlyDomain));
   }
 

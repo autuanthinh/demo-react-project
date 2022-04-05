@@ -26,8 +26,9 @@ const App: FC<IAppProps> = ({}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log('dau xanh');
     dispatch(appActions.checkTokenExisted());
-  }, [dispatch]);
+  }, []);
 
   const isLoggedIn = useMemo(() => !!authToken, [authToken]);
 
