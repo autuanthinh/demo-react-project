@@ -59,6 +59,16 @@ class Cookie {
 
     return calcOption;
   }
+
+  setToken(token: string) {
+    // And save new token to cookie with expire time 10m
+    const expiredTime = Date.now() + 10 * 60 * 1000;
+    this.setItem(this.keys.TOKEN, token, { expires: expiredTime }, false);
+  }
+
+  removeToken() {
+    this.removeItem(this.keys.TOKEN, {}, false);
+  }
 }
 
 export default new Cookie();

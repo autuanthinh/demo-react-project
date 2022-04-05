@@ -12,7 +12,7 @@ import sagaSubPageB from './saga';
 
 export interface ISubPageBProps {}
 
-const SubPageB: FC<ISubPageBProps> = ({}) => {
+const SubPageB: FC<ISubPageBProps> = () => {
   return (
     <div>
       <h1>Sub Page B</h1>

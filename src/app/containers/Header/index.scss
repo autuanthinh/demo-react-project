@@ -1,0 +1,13 @@
+@import '~styles/common/export.scss';
+
+.auth-header {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: white !important;
+  align-items: center;
+
+  .ant-menu {
+    flex: auto;
+    color: blue;
+  }
+}

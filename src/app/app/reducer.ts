@@ -21,13 +21,12 @@ const reducer = (state: ImmutableState = getInitData(), action: any): ImmutableS
 
     // Auth
     case nameActList.SET_TOKEN:
-      return state.set('token', action.payload).set('isCheckedLogin', true);
     case nameActList.LOG_IN:
-      const expiredTime = Date.now() + 10 * 60 * 1000;
-      cookie.setItem(cookie.keys.TOKEN, action.payload, { expires: expiredTime }, false);
+      cookie.setToken(action.payload);
       return state.set('token', action.payload).set('isCheckedLogin', true);
 
     case nameActList.LOG_OUT:
+      cookie.removeToken();
     case nameActList.CLEAR:
       return getInitData().set('isCheckedLogin', true).set('isLoading', false);
     default:

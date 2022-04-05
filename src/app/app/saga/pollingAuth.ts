@@ -36,16 +36,11 @@ class PollToken extends SagaPoll {
 export function* refreshToken(token: any): any {
   try {
     const result: any = yield authService.refreshToken(token);
-    localStorage.setItem('token', result.token);
-
-    // And save new token to cookie with expire time 10m
-    const expiredTime = Date.now() + 10 * 60 * 1000;
-    cookie.setItem(cookie.keys.TOKEN, result.token, { expires: expiredTime }, false);
+    cookie.setToken(result.token);
 
     yield put(appActions.setToken(result.token));
   } catch (error) {
     Utils.handleError(error);
-    cookie.removeItem('token');
     yield put(appActions.logout());
   }
 }

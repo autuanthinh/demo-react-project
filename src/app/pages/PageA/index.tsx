@@ -42,7 +42,7 @@ const PageA: FC<IPageAProps> = ({ intl }) => {
       <Switch>
         <Route exact={false} path={'/pageA/subPageA'} component={SubPageA} />
         <Route exact={false} path={'/pageA/subPageB'} component={SubPageB} />
-        <Redirect to={'/pageA/subPageA'} />
+        <Redirect to={'/pageA/subPageA'} push={false} />
       </Switch>
     </div>
   );
