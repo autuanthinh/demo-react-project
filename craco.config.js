@@ -24,10 +24,7 @@ module.exports = {
 
       // Edit HtmlWebpackPlugin to attach preconnect of PreconnectHtmlWebpackPlugin
       const HtmlWebpackPluginOptions = plugins[0].options;
-      HtmlWebpackPluginOptions.preconnect = [
-        { url: process.env.REACT_APP_VALIDATE_URL },
-        { url: process.env.REACT_APP_MSS_SERVICES_URL + '/vendor_performance' },
-      ];
+      HtmlWebpackPluginOptions.preconnect = [{ url: process.env.REACT_APP_MSS_SERVICES_URL }];
 
       return webpackConfig;
     },

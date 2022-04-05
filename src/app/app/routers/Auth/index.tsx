@@ -9,16 +9,14 @@ import Footer from 'app/containers/Footer';
 
 const AsyncHome = asyncComponent(() => import('app/pages/HomePage'));
 const AsyncPageA = asyncComponent(() => import('app/pages/PageA'));
-const AsyncPageB = asyncComponent(() => import('app/pages/PageB'));
 
 const AuthRouter: FC<any> = () => {
   return (
-    <Layout>
+    <Layout className="layout">
       <Header />
       <Switch>
         <Route exact={true} path={'/'} component={AsyncHome} />
         <Route exact={false} path={'/pageA'} component={AsyncPageA} />
-        <Route exact={false} path={'/pageB'} component={AsyncPageB} />
         <Redirect to={'/'} />
       </Switch>
       <Footer />

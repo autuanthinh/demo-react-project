@@ -1,4 +1,4 @@
-import * as listTypes from './constant';
+import * as listTypes from './constants';
 
 export function clear() {
   return {
@@ -16,5 +16,30 @@ export const setLoading = (payload: boolean) => {
   return {
     type: listTypes.SET_LOADING,
     payload,
+  };
+};
+
+export const checkTokenExisted = () => {
+  return {
+    type: listTypes.CHECK_TOKEN,
+  };
+};
+
+export const setToken = (payload: string) => {
+  return {
+    type: listTypes.SET_TOKEN,
+    payload,
+  };
+};
+export const login = (payload: string) => {
+  return {
+    type: listTypes.LOG_IN,
+    payload,
+  };
+};
+
+export const logout = () => {
+  return {
+    type: listTypes.LOG_OUT,
   };
 };

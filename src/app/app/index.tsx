@@ -10,26 +10,32 @@ import Routers from './routers';
 
 import appReducer from './reducer';
 import appSaga from './saga';
+import * as appActions from './actions';
 
 import * as selectors from 'app/app/selectors';
+import PageLoading from 'src/app/containers/PageLoading';
 
 export interface IAppProps extends Props<HTMLElement> {}
 
 const App: FC<IAppProps> = ({}) => {
   const isLoading = useSelector(selectors.isLoadingSelector);
 
-  const authToken = true;
-  const isCheckedLogin = true;
+  const authToken = useSelector(selectors.tokenSelector);
+  const isCheckedLogin = useSelector(selectors.isCheckedLoginSelector);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(authActions.checkTokenExisted());
+    dispatch(appActions.checkTokenExisted());
   }, [dispatch]);
 
   const isLoggedIn = useMemo(() => !!authToken, [authToken]);
 
-  return <div>{isCheckedLogin && !isLoading && <Routers isLoggedIn={!!authToken} />}</div>;
+  if (isLoading) {
+    return <PageLoading />;
+  }
+
+  return <div>{isCheckedLogin && <Routers isLoggedIn={isLoggedIn} />}</div>;
 };
 
 export default UtilInject.combineInjectionComponent(

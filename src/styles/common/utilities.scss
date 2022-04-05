@@ -1,0 +1,198 @@
+/* *
+*   POSITION and DISPLAY utilities */
+.d-block {
+  display: block !important;
+}
+.d-inline {
+  display: inline !important;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+.d-inline-flex {
+  display: inline-flex !important;
+}
+.d-none {
+  display: none !important;
+}
+.d-flex {
+  display: flex !important;
+}
+.position-relative {
+  position: relative !important;
+}
+.position-absolute {
+  position: absolute !important;
+}
+.position-fixed {
+  position: fixed !important;
+}
+.position-sticky {
+  position: sticky !important;
+}
+/* *
+*   FLEX utilities */
+.justify-content-center {
+  justify-content: center !important;
+}
+.justify-space-around {
+  justify-content: space-around !important;
+}
+.justify-space-between {
+  justify-content: space-between !important;
+}
+.justify-flex-end {
+  justify-content: flex-end !important;
+}
+.justify-flex-start {
+  justify-content: flex-start !important;
+}
+.align-items-center {
+  align-items: center !important;
+}
+.align-items-flex-start {
+  align-items: flex-start !important;
+}
+.align-items-flex-end {
+  align-items: flex-end !important;
+}
+.align-items-stretch {
+  align-items: stretch !important;
+}
+.align-items-baseline {
+  align-items: baseline !important;
+}
+.flex-row-wrap {
+  flex-flow: row wrap !important;
+}
+.flex-direction-column {
+  flex-direction: column !important;
+}
+.flex-direction-row {
+  flex-direction: row !important;
+}
+.flex-row-nowrap {
+  flex-flow: row nowrap !important;
+}
+.flex-column-wrap {
+  flex-flow: column wrap !important;
+}
+.flex-column-nowrap {
+  flex-flow: column nowrap !important;
+}
+.flex-auto {
+  flex: 1 1 auto !important;
+}
+.flex-init {
+  flex: 1 1 !important;
+}
+.flex-none {
+  flex: none;
+}
+@for $i from 0 through 12 {
+  .order-#{$i} {
+    order: $i !important;
+  }
+}
+/* *
+*   TEXT utilities */
+.text-center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-justify {
+  text-align: justify !important;
+}
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+.text-none {
+  text-transform: none !important;
+}
+.text-underline {
+  text-decoration: underline !important;
+}
+.text-hover-underline {
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+.text-bold {
+  font-weight: bold !important;
+}
+.text-w-600 {
+  font-weight: 600 !important;
+}
+.text-italic {
+  font-style: italic;
+}
+
+.word-break-all {
+  word-break: break-all !important;
+}
+.word-break {
+  word-wrap: break-word !important;
+}
+
+/* *
+* CURSOR*/
+.cursor-default {
+  cursor: default !important;
+}
+.cursor-pointer {
+  cursor: pointer !important;
+}
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+.cursor-move {
+  cursor: move !important;
+}
+
+/*
+* Boders
+*/
+.border {
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* *
+*   Another */
+.overflow-auto {
+  overflow: auto;
+}
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+.full-min-width {
+  min-width: 100%;
+}
+.full-max-width {
+  max-width: 100%;
+}
+.min-width-0 {
+  min-width: 0;
+}
+.min-height-0 {
+  min-height: 0;
+}

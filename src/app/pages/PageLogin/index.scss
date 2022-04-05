@@ -1,0 +1,13 @@
+@import '~styles/common/export.scss';
+
+.login-page {
+  min-height: 100%;
+  padding-top: 50px;
+  background-color: var(--ant-primary-color);
+
+  .login-card {
+    max-width: 450px;
+    margin: 0 auto;
+    box-shadow: $shadowHigh;
+  }
+}
