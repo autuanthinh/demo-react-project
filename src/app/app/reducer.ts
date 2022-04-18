@@ -27,6 +27,7 @@ const reducer = (state: ImmutableState = getInitData(), action: any): ImmutableS
 
     case nameActList.LOG_OUT:
       cookie.removeToken();
+      return getInitData().set('isCheckedLogin', true).set('isLoading', false);
     case nameActList.CLEAR:
       return getInitData().set('isCheckedLogin', true).set('isLoading', false);
     default:

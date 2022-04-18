@@ -15,8 +15,8 @@ const AuthRouter: FC<any> = () => {
   return (
     <Layout className="auth-layout">
       <Header />
-      <Breadcrumb />
       <Layout.Content>
+        <Breadcrumb />
         <Switch>
           <Route exact={true} path={'/'} component={AsyncHome} />
           <Route exact={false} path={'/pageA'} component={AsyncPageA} />
