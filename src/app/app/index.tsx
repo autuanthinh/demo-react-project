@@ -23,7 +23,7 @@ const App: FC<IAppProps> = ({}) => {
 
   useEffect(() => {
     dispatch(appActions.checkTokenExisted());
-  }, []);
+  }, [dispatch]);
 
   const isLoggedIn = useMemo(() => !!authToken, [authToken]);
 

@@ -17,13 +17,13 @@ const Header: FC<IHeaderProps & InjectedIntlProps> = ({ intl }) => {
   const dispatch = useDispatch();
   const location = useSelector(routerLocationSelector);
 
-  const logout = useCallback(() => dispatch(appActions.logout()), []);
+  const logout = useCallback(() => dispatch(appActions.logout()), [dispatch]);
 
   const activeKey = useMemo(() => {
     const paths = location.pathname.split('/');
 
     return paths[paths.length - 1];
-  }, [dispatch, location]);
+  }, [location]);
 
   return (
     <Layout.Header className="auth-header">

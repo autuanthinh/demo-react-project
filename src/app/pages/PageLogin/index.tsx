@@ -22,7 +22,7 @@ type RequiredMark = boolean | 'optional';
 const PageLogin: FC<IPageLoginProps & InjectedIntlProps> = ({ intl }) => {
   const dispatch = useDispatch();
   const [isSubmitting, setSubmitting] = useState(false);
-  const [requiredMark, setRequiredMarkType] = useState<RequiredMark>('optional');
+  const [requiredMark] = useState<RequiredMark>('optional');
 
   const login = useMemo(
     () =>
@@ -46,7 +46,7 @@ const PageLogin: FC<IPageLoginProps & InjectedIntlProps> = ({ intl }) => {
           trailing: true,
         }
       ),
-    [intl]
+    [dispatch, intl]
   );
 
   const onFinish = useCallback(

@@ -1,7 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosError, AxiosResponse, AxiosRequestHeaders } from 'axios';
 import _ from 'lodash';
 import Config from 'app/config';
-import { localStorage } from 'app/utils';
 import { Object } from 'app/types';
 import { cookie } from 'app/utils';
 import { message } from 'antd';

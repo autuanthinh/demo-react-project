@@ -6,7 +6,7 @@ import { compose } from 'redux';
 
 import { UtilInject } from 'app/utils';
 
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
