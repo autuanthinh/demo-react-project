@@ -14,7 +14,8 @@ body {
     height: 100%;
 
     > .ant-layout {
-      height: 100%;
+      min-height: 100%;
+      overflow: auto;
       > .ant-breadcrumb {
         padding: 0 32px;
       }

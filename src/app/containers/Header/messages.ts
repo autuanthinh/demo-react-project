@@ -19,6 +19,39 @@ export default defineMessages({
     defaultMessage: 'Sub Page B',
   },
 
+  pageReact: {
+    id: 'pageLogin.pageReact',
+    defaultMessage: 'React',
+  },
+  pageReactHook: {
+    id: 'pageLogin.pageReactHook',
+    defaultMessage: 'React Hook',
+  },
+  pageReactContext: {
+    id: 'pageReact.pageReactContext',
+    defaultMessage: 'React Context',
+  },
+  pageReactRef: {
+    id: 'pageReact.pageReactRef',
+    defaultMessage: 'React Ref',
+  },
+  pageReactConditionRender: {
+    id: 'pageReact.pageReactConditionRender',
+    defaultMessage: 'React Condition Render',
+  },
+  pageReactListAndKeys: {
+    id: 'pageReact.pageReactListAndKeys',
+    defaultMessage: 'React List & Keys',
+  },
+  pageReactCustomHook: {
+    id: 'pageReact.pageReactCustomHook',
+    defaultMessage: 'React Custom Hook',
+  },
+  pageReactChildrenAsFunction: {
+    id: 'pageReact.pageReactChildrenAsFunction',
+    defaultMessage: 'React Children As Function',
+  },
+
   // Other
   logout: {
     id: 'pageLogin.logout',

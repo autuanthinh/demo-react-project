@@ -10,4 +10,15 @@
     flex: auto;
     color: blue;
   }
+
+  .ant-menu-submenu-title a {
+    color: rgba(0,0,0,.85);
+  }
+
+  .ant-menu-submenu-active,
+  .ant-menu-submenu-selected {
+    .ant-menu-submenu-title a {
+      color: var(--ant-primary-color);
+    }
+  }
 }

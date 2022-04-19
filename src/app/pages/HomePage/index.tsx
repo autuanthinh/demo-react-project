@@ -25,7 +25,7 @@ const HomePage: FC<IHomePageProps> = ({}) => {
           <Link to="/pageA">Page A</Link>
         </li>
         <li>
-          <Link to="/pageB">Page B</Link>
+          <Link to="/react">React</Link>
         </li>
       </ul>
     </div>
