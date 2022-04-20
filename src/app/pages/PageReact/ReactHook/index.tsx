@@ -7,6 +7,7 @@ import messages from '../messages';
 
 import ReactUseState from './ReactUseState';
 import ReactUseEffect from './ReactUseEffect';
+import { Divider } from 'antd';
 
 export interface IReactHookProps {}
 
@@ -18,6 +19,7 @@ const ReactHook: FC<CombineProps> = ({ intl }) => {
     <div>
       <h1>{intl.formatMessage(titleIntl)}</h1>
       <ReactUseState />
+      <Divider />
       <ReactUseEffect />
     </div>
   );

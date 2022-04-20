@@ -27,8 +27,8 @@ const ReactUseState: FC<CombineProps> = ({}) => {
         {isOpen ? 'Anh sẽ vì em làm thơ tình ái' : <>&nbsp;</>}
         {undefined}
       </div>
-      <Button onClick={toggle1}>Toggle 1</Button>
-      <Button onClick={toggle2}>Toggle 2</Button>
+      <Button onClick={toggle1}>{`Toggle | setOpen(!isOpen)`}</Button>
+      <Button onClick={toggle2}>{`Toggle | setOpen(v => !v)`}</Button>
     </div>
   );
 };

@@ -33,4 +33,12 @@ export default defineMessages({
     id: 'pageReact.reactChildrenAsFunction',
     defaultMessage: 'React Children As Function',
   },
+  reactHOC: {
+    id: 'pageReact.reactHOC',
+    defaultMessage: 'React HOC',
+  },
+  reactLiftingStateUp: {
+    id: 'pageReact.reactLiftingStateUp',
+    defaultMessage: 'React Lifting State Up',
+  },
 });

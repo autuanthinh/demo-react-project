@@ -47,7 +47,8 @@
       "react-app/jest"
     ],
     "rules": {
-      "no-empty-pattern": 0
+      "no-empty-pattern": 0,
+      "react-hooks/exhaustive-deps": "off"
     }
   },
   "jest": {

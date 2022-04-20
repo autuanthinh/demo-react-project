@@ -51,6 +51,14 @@ export default defineMessages({
     id: 'pageReact.pageReactChildrenAsFunction',
     defaultMessage: 'React Children As Function',
   },
+  pageReactHOC: {
+    id: 'pageReact.pageReactHOC',
+    defaultMessage: 'React HOC',
+  },
+  pageReactLiftingStateUp: {
+    id: 'pageReact.pageReactHOC',
+    defaultMessage: 'React Lifting State Up',
+  },
 
   // Other
   logout: {

@@ -2,7 +2,7 @@ import React, { ChangeEvent, MouseEventHandler, FC, useCallback, useMemo, useRef
 import { injectIntl, InjectedIntlProps } from 'react-intl';
 import { UtilInject } from 'app/utils';
 
-import { Button, Input, InputRef } from 'antd';
+import { Button, Divider, Input, InputRef } from 'antd';
 import CustomInput from './CustomInput';
 import RefValue from './RefValue';
 
@@ -39,14 +39,16 @@ const ReactRef: FC<CombineProps> = ({ intl }) => {
       <div>
         <h3>Direct ref to input</h3>
         <Input ref={inputRef1} value={value} onChange={changeValue} addonBefore={<span>1</span>} />
+        <Divider />
         <h3>Using forward ref to input</h3>
         <CustomInput ref={inputRef2} value={value} onChange={changeValue} addonBefore={<span>2</span>} />
         <Button onClick={focus1}>Focus 1</Button>
         <Button onClick={focus2}>Focus 2</Button>
-      </div>
 
-      <RefValue />
-      <RefValue />
+        <Divider />
+        <RefValue />
+        <RefValue />
+      </div>
     </div>
   );
 };

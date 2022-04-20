@@ -9,6 +9,8 @@ import ReactRef from './ReactRef';
 import ReactConditionRender from './ReactConditionRender';
 import ReactListAndKeys from './ReactListAndKeys';
 import ReactChildrenAsFunction from './ReactChildrenAsFunction';
+import ReactHOC from './ReactHOC';
+import ReactLiftingStateUp from './ReactLiftingStateUp';
 
 export interface IPageAProps {}
 
@@ -24,6 +26,8 @@ const PageReact: FC<IPageAProps> = ({}) => {
         <Route path={'/react/react-condition-render'} component={ReactConditionRender} />
         <Route path={'/react/react-list-keys'} component={ReactListAndKeys} />
         <Route path={'/react/react-children-as-function'} component={ReactChildrenAsFunction} />
+        <Route path={'/react/react-hoc'} component={ReactHOC} />
+        <Route path={'/react/react-lifting-state-up'} component={ReactLiftingStateUp} />
         <Redirect to={'/react'} push={false} />
       </Switch>
       {/* <div>

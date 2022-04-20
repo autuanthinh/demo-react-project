@@ -43,6 +43,12 @@ const PageReactHome: FC<CombineProps> = ({ intl }) => {
         <li>
           <Link to="/react/react-children-as-function">{intl.formatMessage(messages.reactChildrenAsFunction)}</Link>
         </li>
+        <li>
+          <Link to="/react/react-hoc">{intl.formatMessage(messages.reactHOC)}</Link>
+        </li>
+        <li>
+          <Link to="/react/react-lifting-state-up">{intl.formatMessage(messages.reactLiftingStateUp)}</Link>
+        </li>
       </ul>
     </div>
   );

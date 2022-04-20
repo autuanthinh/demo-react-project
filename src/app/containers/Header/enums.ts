@@ -17,6 +17,8 @@ export const HEADER = {
   PAGE_REACT_LIST_KEYS: 'react-list-keys',
   PAGE_REACT_CUSTOM_HOOK: 'react-custom-hook',
   PAGE_REACT_CHILDREN_AS_FUNCTION: 'react-children-as-function',
+  PAGE_REACT_HOC: 'react-hoc',
+  PAGE_REACT_LIFTING_STATE_UP: 'react-lifting-state-up',
 };
 
 const menuMessages = {
@@ -33,6 +35,8 @@ const menuMessages = {
   [HEADER.PAGE_REACT_LIST_KEYS]: messages.pageReactListAndKeys,
   [HEADER.PAGE_REACT_CUSTOM_HOOK]: messages.pageReactCustomHook,
   [HEADER.PAGE_REACT_CHILDREN_AS_FUNCTION]: messages.pageReactChildrenAsFunction,
+  [HEADER.PAGE_REACT_HOC]: messages.pageReactHOC,
+  [HEADER.PAGE_REACT_LIFTING_STATE_UP]: messages.pageReactLiftingStateUp,
 };
 
 export const getMenuLabels = (intl: InjectedIntl) => {

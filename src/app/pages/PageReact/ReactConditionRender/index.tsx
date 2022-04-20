@@ -4,7 +4,7 @@ import { UtilInject } from 'app/utils';
 
 import headerMessages from 'app/containers/Header/messages';
 import messages from '../messages';
-import { Col, Row } from 'antd';
+import { Col, Divider, Row } from 'antd';
 
 export interface IConditionRenderProps {}
 
@@ -31,7 +31,7 @@ const ConditionRender: FC<CombineProps> = ({ intl }) => {
             </li>
           </ul>
 
-          <br></br>
+          <Divider />
 
           <h3>UNDEFINED</h3>
           <ul>
@@ -46,7 +46,7 @@ const ConditionRender: FC<CombineProps> = ({ intl }) => {
             </li>
           </ul>
 
-          <br></br>
+          <Divider />
 
           <h3>String empty</h3>
           <ul>
@@ -75,7 +75,7 @@ const ConditionRender: FC<CombineProps> = ({ intl }) => {
             </li>
           </ul>
 
-          <br></br>
+          <Divider />
 
           <h3>Object</h3>
           <ul>
@@ -92,7 +92,7 @@ const ConditionRender: FC<CombineProps> = ({ intl }) => {
             </li>
           </ul>
 
-          <br></br>
+          <Divider />
 
           <h3>Array</h3>
           <ul>

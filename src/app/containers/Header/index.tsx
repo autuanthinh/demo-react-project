@@ -68,6 +68,12 @@ const Header: FC<IHeaderProps & InjectedIntlProps> = ({ intl }) => {
               {intl.formatMessage(messages.pageReactChildrenAsFunction)}
             </Link>
           </Menu.Item>
+          <Menu.Item key={HEADER.PAGE_REACT_HOC}>
+            <Link to="/react/react-hoc">{intl.formatMessage(messages.pageReactHOC)}</Link>
+          </Menu.Item>
+          <Menu.Item key={HEADER.PAGE_REACT_LIFTING_STATE_UP}>
+            <Link to="/react/react-lifting-state-up">{intl.formatMessage(messages.pageReactLiftingStateUp)}</Link>
+          </Menu.Item>
         </Menu.SubMenu>
       </Menu>
       <Dropdown
