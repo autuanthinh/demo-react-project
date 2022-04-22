@@ -3,6 +3,8 @@ import { injectIntl, InjectedIntlProps } from 'react-intl';
 
 import { UtilInject } from 'app/utils';
 
+import { REACT_LINK } from 'app/containers/Header/enums';
+
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
@@ -15,6 +17,7 @@ type CombineProps = IPageReactHomeProps & InjectedIntlProps;
 
 const PageReactHome: FC<CombineProps> = ({ intl }) => {
   const titleIntl = useMemo(() => messages.title || headerMessages.pageReact, []);
+
   return (
     <div>
       <Helmet>
@@ -23,35 +26,50 @@ const PageReactHome: FC<CombineProps> = ({ intl }) => {
       <h1>{intl.formatMessage(titleIntl)}</h1>
       <ul>
         <li>
-          <Link to="/react/react-hook">{intl.formatMessage(messages.reactHook)}</Link>
+          <Link to={REACT_LINK.PAGE_REACT_HOOK}>{intl.formatMessage(messages.reactHook)}</Link>
         </li>
         <li>
-          <Link to="/react/react-custom-hook">{intl.formatMessage(messages.reactCustomHook)}</Link>
+          <Link to={REACT_LINK.PAGE_REACT_CUSTOM_HOOK}>{intl.formatMessage(messages.reactCustomHook)}</Link>
         </li>
         <li>
-          <Link to="/react/react-context">{intl.formatMessage(messages.reactContext)}</Link>
+          <Link to={REACT_LINK.PAGE_REACT_CONTEXT}>{intl.formatMessage(messages.reactContext)}</Link>
         </li>
         <li>
-          <Link to="/react/react-ref">{intl.formatMessage(messages.reactRef)}</Link>
+          <Link to={REACT_LINK.PAGE_REACT_LEGACY_CONTEXT}>{intl.formatMessage(messages.reactLegacyContext)}</Link>
         </li>
         <li>
-          <Link to="/react/react-condition-render">{intl.formatMessage(messages.reactConditionRender)}</Link>
+          <Link to={REACT_LINK.PAGE_REACT_REF}>{intl.formatMessage(messages.reactRef)}</Link>
         </li>
         <li>
-          <Link to="/react/react-list-keys">{intl.formatMessage(messages.reactListAndKeys)}</Link>
+          <Link to={REACT_LINK.PAGE_REACT_CONDITION_RENDER}>{intl.formatMessage(messages.reactConditionRender)}</Link>
         </li>
         <li>
-          <Link to="/react/react-children-as-function">{intl.formatMessage(messages.reactChildrenAsFunction)}</Link>
+          <Link to={REACT_LINK.PAGE_REACT_LIST_KEYS}>{intl.formatMessage(messages.reactListAndKeys)}</Link>
         </li>
         <li>
-          <Link to="/react/react-hoc">{intl.formatMessage(messages.reactHOC)}</Link>
+          <Link to={REACT_LINK.PAGE_REACT_CHILDREN_AS_FUNCTION}>
+            {intl.formatMessage(messages.reactChildrenAsFunction)}
+          </Link>
         </li>
         <li>
-          <Link to="/react/react-lifting-state-up">{intl.formatMessage(messages.reactLiftingStateUp)}</Link>
+          <Link to={REACT_LINK.PAGE_REACT_HOC}>{intl.formatMessage(messages.reactHOC)}</Link>
+        </li>
+        <li>
+          <Link to={REACT_LINK.PAGE_REACT_LIFTING_STATE_UP}>{intl.formatMessage(messages.reactLiftingStateUp)}</Link>
+        </li>
+        <li>
+          <Link to={REACT_LINK.PAGE_REACT_ROUTER_BLOCK_NAVIGATION}>
+            {intl.formatMessage(messages.reactRouterBlockNavigation)}
+          </Link>
+        </li>
+        <li>
+          <Link to={REACT_LINK.PAGE_REACT_RECONSTRUCT_CHILD_COMPONENT}>
+            {intl.formatMessage(messages.reactReconstructChildComponent)}
+          </Link>
         </li>
       </ul>
     </div>
   );
 };
 
-export default UtilInject.combineInjectionComponent([injectIntl], PageReactHome) as FC<IPageReactHomeProps>;
+export default UtilInject.combineInjectionComponent([injectIntl], PageReactHome);

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Avatar, Dropdown, Layout, Menu, Divider } from 'antd';
 import { CaretDownOutlined } from '@ant-design/icons';
 
-import { HEADER, normalizeSelectedKeys } from './enums';
+import { HEADER, REACT_LINK, normalizeSelectedKeys } from './enums';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { routerLocationSelector } from 'app/containers/router/selectors';
@@ -40,39 +40,56 @@ const Header: FC<IHeaderProps & InjectedIntlProps> = ({ intl }) => {
         <Menu.SubMenu
           key={HEADER.PAGE_REACT}
           title={
-            <Link to="/react">
+            <Link to={REACT_LINK.PAGE_REACT}>
               {intl.formatMessage(messages.pageReact)} <CaretDownOutlined />
             </Link>
           }
         >
           <Menu.Item key={HEADER.PAGE_REACT_HOOK}>
-            <Link to="/react/react-hook">{intl.formatMessage(messages.pageReactHook)}</Link>
+            <Link to={REACT_LINK.PAGE_REACT_HOOK}>{intl.formatMessage(messages.pageReactHook)}</Link>
           </Menu.Item>
           <Menu.Item key={HEADER.PAGE_REACT_CUSTOM_HOOK}>
-            <Link to="/react/react-custom-hook">{intl.formatMessage(messages.pageReactCustomHook)}</Link>
+            <Link to={REACT_LINK.PAGE_REACT_CUSTOM_HOOK}>{intl.formatMessage(messages.pageReactCustomHook)}</Link>
           </Menu.Item>
           <Menu.Item key={HEADER.PAGE_REACT_CONTEXT}>
-            <Link to="/react/react-context">{intl.formatMessage(messages.pageReactContext)}</Link>
+            <Link to={REACT_LINK.PAGE_REACT_CONTEXT}>{intl.formatMessage(messages.pageReactContext)}</Link>
+          </Menu.Item>
+          <Menu.Item key={HEADER.PAGE_REACT_LEGACY_CONTEXT}>
+            <Link to={REACT_LINK.PAGE_REACT_LEGACY_CONTEXT}>{intl.formatMessage(messages.pageReactLegacyContext)}</Link>
           </Menu.Item>
           <Menu.Item key={HEADER.PAGE_REACT_REF}>
-            <Link to="/react/react-ref">{intl.formatMessage(messages.pageReactRef)}</Link>
+            <Link to={REACT_LINK.PAGE_REACT_REF}>{intl.formatMessage(messages.pageReactRef)}</Link>
           </Menu.Item>
           <Menu.Item key={HEADER.PAGE_REACT_CONDITION_RENDER}>
-            <Link to="/react/react-condition-render">{intl.formatMessage(messages.pageReactConditionRender)}</Link>
+            <Link to={REACT_LINK.PAGE_REACT_CONDITION_RENDER}>
+              {intl.formatMessage(messages.pageReactConditionRender)}
+            </Link>
           </Menu.Item>
           <Menu.Item key={HEADER.PAGE_REACT_LIST_KEYS}>
-            <Link to="/react/react-list-keys">{intl.formatMessage(messages.pageReactListAndKeys)}</Link>
+            <Link to={REACT_LINK.PAGE_REACT_LIST_KEYS}>{intl.formatMessage(messages.pageReactListAndKeys)}</Link>
           </Menu.Item>
           <Menu.Item key={HEADER.PAGE_REACT_CHILDREN_AS_FUNCTION}>
-            <Link to="/react/react-children-as-function">
+            <Link to={REACT_LINK.PAGE_REACT_CHILDREN_AS_FUNCTION}>
               {intl.formatMessage(messages.pageReactChildrenAsFunction)}
             </Link>
           </Menu.Item>
           <Menu.Item key={HEADER.PAGE_REACT_HOC}>
-            <Link to="/react/react-hoc">{intl.formatMessage(messages.pageReactHOC)}</Link>
+            <Link to={REACT_LINK.PAGE_REACT_HOC}>{intl.formatMessage(messages.pageReactHOC)}</Link>
           </Menu.Item>
           <Menu.Item key={HEADER.PAGE_REACT_LIFTING_STATE_UP}>
-            <Link to="/react/react-lifting-state-up">{intl.formatMessage(messages.pageReactLiftingStateUp)}</Link>
+            <Link to={REACT_LINK.PAGE_REACT_LIFTING_STATE_UP}>
+              {intl.formatMessage(messages.pageReactLiftingStateUp)}
+            </Link>
+          </Menu.Item>
+          <Menu.Item key={HEADER.PAGE_REACT_ROUTER_BLOCK_NAVIGATION}>
+            <Link to={REACT_LINK.PAGE_REACT_ROUTER_BLOCK_NAVIGATION}>
+              {intl.formatMessage(messages.pageReactRouterBlockNavigation)}
+            </Link>
+          </Menu.Item>
+          <Menu.Item key={HEADER.PAGE_REACT_RECONSTRUCT_CHILD_COMPONENT}>
+            <Link to={REACT_LINK.PAGE_REACT_RECONSTRUCT_CHILD_COMPONENT}>
+              {intl.formatMessage(messages.pageReactReconstructChildComponent)}
+            </Link>
           </Menu.Item>
         </Menu.SubMenu>
       </Menu>

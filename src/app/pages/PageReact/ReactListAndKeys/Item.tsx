@@ -10,7 +10,7 @@ export interface IItemProps {
 const Item: FC<IItemProps> = ({ value, index, removeItem, addUnmount }) => {
   useEffect(() => {
     return () => {
-      console.log('Unmount value: ' + value);
+      // console.log('Unmount value: ' + value);
       addUnmount(value);
     };
   }, [addUnmount]);

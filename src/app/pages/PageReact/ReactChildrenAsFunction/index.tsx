@@ -7,11 +7,11 @@ import RandomCard from './RandomCard';
 import headerMessages from 'app/containers/Header/messages';
 import messages from '../messages';
 
-export interface ICustomHookProps {}
+export interface IChildrenAsFunctionProps {}
 
-type CombineProps = ICustomHookProps & InjectedIntlProps;
+type CombineProps = IChildrenAsFunctionProps & InjectedIntlProps;
 
-const CustomHook: FC<CombineProps> = ({ intl }) => {
+const ChildrenAsFunction: FC<CombineProps> = ({ intl }) => {
   const titleIntl = useMemo(() => messages.reactChildrenAsFunction || headerMessages.pageReactChildrenAsFunction, []);
 
   return (
@@ -31,4 +31,4 @@ const CustomHook: FC<CombineProps> = ({ intl }) => {
   );
 };
 
-export default UtilInject.combineInjectionComponent([injectIntl], CustomHook) as FC<ICustomHookProps>;
+export default UtilInject.combineInjectionComponent([injectIntl], ChildrenAsFunction) as FC<IChildrenAsFunctionProps>;

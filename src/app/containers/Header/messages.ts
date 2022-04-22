@@ -31,6 +31,10 @@ export default defineMessages({
     id: 'pageReact.pageReactContext',
     defaultMessage: 'React Context',
   },
+  pageReactLegacyContext: {
+    id: 'pageReact.pageReactLegacyContext',
+    defaultMessage: 'React Legacy Context',
+  },
   pageReactRef: {
     id: 'pageReact.pageReactRef',
     defaultMessage: 'React Ref',
@@ -58,6 +62,14 @@ export default defineMessages({
   pageReactLiftingStateUp: {
     id: 'pageReact.pageReactHOC',
     defaultMessage: 'React Lifting State Up',
+  },
+  pageReactRouterBlockNavigation: {
+    id: 'pageReact.pageReactRouterBlockNavigation',
+    defaultMessage: 'React Router Block Navigation',
+  },
+  pageReactReconstructChildComponent: {
+    id: 'pageReact.pageReactReconstructChildComponent',
+    defaultMessage: 'React Reconstruct ChildComponent',
   },
 
   // Other
