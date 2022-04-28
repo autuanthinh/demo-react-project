@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import { UtilInject } from 'app/utils';

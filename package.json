@@ -6,14 +6,14 @@
     "build": "craco build",
     "build:dev": "env-cmd -f env/.env.development.js npm run build",
     "build:prod": "env-cmd -f env/.env.production.js npm run build",
-    "eject": "react-scripts eject",
+    "eject": "craco eject",
     "extract-intl": "babel-node --presets @babel/preset-env -- ./internals/scripts/extract-intl.js",
     "generate": "plop --plopfile internals/generators/index.js",
     "sort-package": "sort-package-json package.json",
     "start": "craco start",
     "start:dev": "env-cmd -f env/.env.development.js npm run start",
     "start:prod": "env-cmd -f env/.env.production.js npm run start",
-    "test": "react-scripts test"
+    "test": "craco test"
   },
   "babel": {
     "plugins": [
@@ -127,7 +127,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
-    "@craco/craco": "^6.4.0",
+    "@craco/craco": "^6.4.3",
     "@types/jest": "^26.0.15",
     "@types/js-cookie": "^3.0.0",
     "@types/lodash": "^4.14.176",
