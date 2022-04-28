@@ -91,6 +91,9 @@ const Header: FC<IHeaderProps & InjectedIntlProps> = ({ intl }) => {
               {intl.formatMessage(messages.pageReactReconstructChildComponent)}
             </Link>
           </Menu.Item>
+          <Menu.Item key={HEADER.PAGE_REACT_PORTAL}>
+            <Link to={REACT_LINK.PAGE_REACT_PORTAL}>{intl.formatMessage(messages.pageReactPortal)}</Link>
+          </Menu.Item>
         </Menu.SubMenu>
       </Menu>
       <Dropdown

@@ -53,4 +53,8 @@ export default defineMessages({
     id: 'pageReact.reactReconstructChildComponent',
     defaultMessage: 'React Reconstruct ChildComponent',
   },
+  reactPortal: {
+    id: 'pageReact.reactPortal',
+    defaultMessage: 'React Portal',
+  },
 });

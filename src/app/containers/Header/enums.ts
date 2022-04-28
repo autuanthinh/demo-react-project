@@ -17,6 +17,7 @@ const ReactSubRoute = {
   PAGE_REACT_LIFTING_STATE_UP: 'react-lifting-state-up',
   PAGE_REACT_ROUTER_BLOCK_NAVIGATION: 'react-router-block-navigation',
   PAGE_REACT_RECONSTRUCT_CHILD_COMPONENT: 'react-reconstruct-child-component',
+  PAGE_REACT_PORTAL: 'react-portal',
 };
 
 export const HEADER = {
@@ -54,6 +55,7 @@ const menuMessages = {
   [HEADER.PAGE_REACT_LIFTING_STATE_UP]: messages.pageReactLiftingStateUp,
   [HEADER.PAGE_REACT_ROUTER_BLOCK_NAVIGATION]: messages.pageReactRouterBlockNavigation,
   [HEADER.PAGE_REACT_RECONSTRUCT_CHILD_COMPONENT]: messages.pageReactReconstructChildComponent,
+  [HEADER.PAGE_REACT_PORTAL]: messages.pageReactPortal,
 };
 
 export const getMenuLabels = (intl: InjectedIntl) => {

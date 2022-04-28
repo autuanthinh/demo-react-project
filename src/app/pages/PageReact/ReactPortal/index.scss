@@ -1,0 +1,60 @@
+@import '~styles/common/export.scss';
+
+#modal-root {
+  position: relative;
+  z-index: 999;
+
+  .modal-shadow {
+   
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal {
+    width: 450px;
+    
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+
+    &-container {
+      min-height: 50px;
+      position: relative;
+    }
+
+    &__close-btn {
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+
+      &:hover {
+        transform: scale(1.1);
+        font-weight: bold;
+      }
+    }
+
+    &__header {
+      padding: 15px;
+      padding-right: 20px;
+      border-bottom: 1px solid gray;
+      font-weight: bold;
+    }
+    &__footer {
+      
+    }
+    &__body {
+      padding: 15px;
+      min-height: 100%;
+    }
+    
+  }
+}
+
+

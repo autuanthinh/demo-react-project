@@ -1,10 +1,10 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import { injectIntl, InjectedIntlProps } from 'react-intl';
 import { UtilInject } from 'app/utils';
 
 import SyntaxHighlighter, { SyntaxHighlighterProps } from 'src/app/components/base/SyntaxHighlighter';
 
-import { Card } from 'antd';
+import { Card, Divider } from 'antd';
 import List from './List';
 
 import headerMessages from 'app/containers/Header/messages';
@@ -36,6 +36,8 @@ const ReconstructChildComponent: FC<CombineProps> = ({ intl }) => {
     []
   );
 
+  const [selectedKey, selectKey] = useState<string>('');
+
   return (
     <div>
       <h1>{intl.formatMessage(titleIntl)}</h1>
@@ -50,10 +52,13 @@ const ReconstructChildComponent: FC<CombineProps> = ({ intl }) => {
         <SyntaxHighlighter {...syntaxProps}>{renderItem}</SyntaxHighlighter>
       </Card>
 
-      <List>
-        <List.Item label="hello" value="world" key="a" />
+      <h1>Custom Menu list</h1>
+      <List selectedKey={selectedKey} onSelect={selectKey}>
+        <List.Item key="a">A</List.Item>
+        <List.Item key="b">B</List.Item>
         <div>đi đâu mà vội mà vàng</div>
-        <List.Item label="age" value={30} key="b" />
+        <Divider />
+        <List.Item key="c">C</List.Item>
         <div>mà vấp phải đá mà quàng phải dây</div>
       </List>
     </div>

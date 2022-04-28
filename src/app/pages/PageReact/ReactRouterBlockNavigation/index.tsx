@@ -2,7 +2,7 @@ import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { injectIntl, InjectedIntlProps } from 'react-intl';
 import { UtilInject } from 'app/utils';
 import withRouter, { IWithRouter } from 'app/containers/router/hoc/withRouter';
-import { UnregisterCallback, Location } from 'history';
+import { UnregisterCallback, History, Location } from 'history';
 
 import headerMessages from 'app/containers/Header/messages';
 import messages from '../messages';
@@ -11,9 +11,13 @@ import { Checkbox, Modal } from 'antd';
 
 export interface IReactRouterBlockNavigationProps {}
 
-type CombineProps = IReactRouterBlockNavigationProps & InjectedIntlProps & IWithRouter;
+type CombineProps = IReactRouterBlockNavigationProps &
+  InjectedIntlProps &
+  IWithRouter & {
+    history: History;
+  };
 
-const ReactRouterBlockNavigation: FC<CombineProps> = ({ intl, history, location }) => {
+const ReactRouterBlockNavigation: FC<CombineProps> = ({ intl, history, replace }) => {
   const titleIntl = useMemo(
     () => messages.reactRouterBlockNavigation || headerMessages.pageReactRouterBlockNavigation,
     []
@@ -26,7 +30,7 @@ const ReactRouterBlockNavigation: FC<CombineProps> = ({ intl, history, location 
   useEffect(() => {
     let unblock: UnregisterCallback;
     if (isBlocking) {
-      unblock = history.block(location => {
+      unblock = history.block((location: Location) => {
         setCurrentLocation(location);
         modalController.open();
         return false;
@@ -34,7 +38,7 @@ const ReactRouterBlockNavigation: FC<CombineProps> = ({ intl, history, location 
     }
 
     return () => unblock?.();
-  }, [history, isBlocking]);
+  }, [history, isBlocking, modalController.open]);
 
   const toggleBlocking = useCallback(() => {
     setBlocking(v => !v);

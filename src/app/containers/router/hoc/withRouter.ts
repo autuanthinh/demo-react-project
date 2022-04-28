@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { Location as ILocation, History } from 'history';
 import { Push, Replace } from 'connected-react-router';
 import { Object } from 'app/types';
 import { push, replace } from '../actions';
@@ -7,10 +6,10 @@ import { push, replace } from '../actions';
 import { routerLocationSelector, queryObjectSelector } from '../selectors';
 import { RouterState } from '../types';
 
-export interface Location extends ILocation {}
+export type { Location, History } from 'history';
+
 export interface IWithRouter {
-  location: ILocation;
-  history: History;
+  location: Location;
   queryObject: Object<any>;
   push: Push;
   replace: Replace;

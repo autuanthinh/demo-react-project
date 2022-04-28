@@ -67,6 +67,9 @@ const PageReactHome: FC<CombineProps> = ({ intl }) => {
             {intl.formatMessage(messages.reactReconstructChildComponent)}
           </Link>
         </li>
+        <li>
+          <Link to={REACT_LINK.PAGE_REACT_PORTAL}>{intl.formatMessage(messages.reactPortal)}</Link>
+        </li>
       </ul>
     </div>
   );

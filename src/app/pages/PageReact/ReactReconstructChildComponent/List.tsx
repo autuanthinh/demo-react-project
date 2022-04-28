@@ -1,15 +1,21 @@
 import React, { FC, useMemo } from 'react';
 
 import Item, { IItemProps } from './Item';
-import { Divider } from 'antd';
 
-export interface IListProps {}
+import './index.scss';
 
-const List: FC<IListProps> & { Item: typeof Item } = ({ children }) => {
+export interface IListProps {
+  classPrefix?: string;
+  selectedKey?: string;
+  onSelect?: (key: string) => void;
+}
+
+const List: FC<IListProps> & { Item: typeof Item } = ({ children, onSelect, classPrefix, selectedKey }) => {
   const normalizeChildren = useMemo<any[]>(() => {
     const list: any[] = [];
     React.Children.forEach<any>(children, i => {
-      if (i.type.name === 'Item') {
+      console.log(i);
+      if (i.type.name === 'Item' || i.type.name === 'Divider') {
         list.push(i);
       }
     });
@@ -18,28 +24,32 @@ const List: FC<IListProps> & { Item: typeof Item } = ({ children }) => {
   }, [children]);
 
   return (
-    <div>
-      <h3>List</h3>
-      <ul>
-        {normalizeChildren.map((child, index) => {
-          const { key } = child;
-          const props: IItemProps = child.props;
+    <div className={classPrefix}>
+      {normalizeChildren.map(child => {
+        const { key } = child;
+        const props: IItemProps = child.props;
 
-          return (
-            <div key={key}>
-              <div>
-                props: <b>label</b> {props.label} <b>value</b> {props.value} <b>key</b> {key}
-              </div>
-              <Item {...props} />
-              {index < normalizeChildren.length - 1 ? <Divider /> : null}
-            </div>
-          );
-        })}
-      </ul>
+        if (child.type.name === 'Divider') return child;
+
+        return (
+          <Item
+            key={key}
+            {...props}
+            onSelect={onSelect}
+            classPrefix={classPrefix}
+            itemKey={key}
+            isActivated={selectedKey === key}
+          />
+        );
+      })}
     </div>
   );
 };
 
 List.Item = Item;
+
+List.defaultProps = {
+  classPrefix: 'custom-menu',
+};
 
 export default List;

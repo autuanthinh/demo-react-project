@@ -1,15 +1,36 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEventHandler, MouseEvent, useCallback, useMemo } from 'react';
+import classNames from 'classnames';
 
 export interface IItemProps {
-  label: string;
-  value: number | string;
+  classPrefix?: string;
+  children: React.ReactNode;
+  itemKey?: string;
+  isActivated?: boolean;
+  onSelect?: (key: string) => void;
+  onClick?: (key: string, e?: MouseEvent<HTMLDivElement>) => void;
 }
 
-const Item: FC<IItemProps> = ({ label, value }) => {
+const Item: FC<IItemProps> = ({ classPrefix, children, onSelect, itemKey, onClick, isActivated }) => {
+  const _onClick: MouseEventHandler<HTMLDivElement> = useCallback(
+    e => {
+      onClick?.(itemKey as string, e);
+      onSelect?.(itemKey as string);
+    },
+    [itemKey, onClick, onSelect]
+  );
+
+  const itemClassName = useMemo(() => {
+    return `${classPrefix}-item`;
+  }, [classPrefix]);
+
   return (
-    <div>
-      <label>Label {label}</label>
-      <div>value {value}</div>
+    <div
+      onClick={_onClick}
+      className={classNames(itemClassName, {
+        [`${itemClassName}__active`]: isActivated,
+      })}
+    >
+      {children}
     </div>
   );
 };

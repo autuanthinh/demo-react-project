@@ -71,6 +71,10 @@ export default defineMessages({
     id: 'pageReact.pageReactReconstructChildComponent',
     defaultMessage: 'React Reconstruct ChildComponent',
   },
+  pageReactPortal: {
+    id: 'pageReact.pageReactPortal',
+    defaultMessage: 'React Portal',
+  },
 
   // Other
   logout: {

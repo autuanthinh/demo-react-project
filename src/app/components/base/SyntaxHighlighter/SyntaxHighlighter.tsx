@@ -5,7 +5,6 @@ import { SyntaxHighlighterProps } from 'react-syntax-highlighter';
 PrismSyntax.setup();
 
 const SyntaxHighlighter: FC<SyntaxHighlighterProps> = props => {
-  console.log({ props });
   return <PrismSyntax.SyntaxHighlighter {...props} />;
 };
 

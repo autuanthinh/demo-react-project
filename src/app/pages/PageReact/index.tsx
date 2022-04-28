@@ -17,10 +17,11 @@ import ReactHOC from './ReactHOC';
 import ReactLiftingStateUp from './ReactLiftingStateUp';
 import ReactRouterBlockNavigation from './ReactRouterBlockNavigation';
 import ReactReconstructChildComponent from './ReactReconstructChildComponent';
+import ReactPortal from './ReactPortal';
 
 export interface IPageAProps {}
 
-const PageReact: FC<IPageAProps> = ({}) => {
+const PageReact: FC<IPageAProps> = () => {
   return (
     <>
       <Switch>
@@ -37,6 +38,7 @@ const PageReact: FC<IPageAProps> = ({}) => {
         <Route path={REACT_LINK.PAGE_REACT_LIFTING_STATE_UP} component={ReactLiftingStateUp} />
         <Route path={REACT_LINK.PAGE_REACT_ROUTER_BLOCK_NAVIGATION} component={ReactRouterBlockNavigation} />
         <Route path={REACT_LINK.PAGE_REACT_RECONSTRUCT_CHILD_COMPONENT} component={ReactReconstructChildComponent} />
+        <Route path={REACT_LINK.PAGE_REACT_PORTAL} component={ReactPortal} />
         <Redirect to={REACT_LINK.PAGE_REACT} push={false} />
       </Switch>
       {/* <div>
