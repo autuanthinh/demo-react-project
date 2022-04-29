@@ -27,6 +27,7 @@ const App: FC<IAppProps> = ({}) => {
 
   const isLoggedIn = useMemo(() => !!authToken, [authToken]);
 
+  // Loading
   if (isLoading) {
     return <PageLoading />;
   }
