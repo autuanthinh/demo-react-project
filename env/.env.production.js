@@ -1,3 +1,3 @@
 module.exports = {
-  REACT_APP_API_URL: 'https://fast-everglades-13219.herokuapp.com',
+  REACT_APP_API_URL: 'https://back-end-nest-js.herokuapp.com',
 };
